@@ -9,13 +9,18 @@ public class InputController : MonoBehaviour
     private Vector3 position;
     private Camera cam;
     private float angle = 0;
-    public WeaponController Weapon;
+    private WeaponController Weapon;
+
+    void Awake()
+    {
+        Weapon = gameObject.GetComponent<WeaponController>();
+        cam = Camera.main;
+    }
 
     void Start()
     {
         target = new Vector3(0.0f, 0.0f);
         position = gameObject.transform.position;
-        cam = Camera.main;
     }
 
     void Update()

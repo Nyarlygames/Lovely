@@ -16,7 +16,6 @@ public class BulletController : MonoBehaviour
 
     void OnBecameInvisible()
     {
-        Debug.Log("destroy me");
         Destroy(gameObject);
     }
 }

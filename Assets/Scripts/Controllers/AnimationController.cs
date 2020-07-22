@@ -4,30 +4,29 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    public SpriteRenderer Renderer;
-    private Sprite[] sprites;
+    private SpriteRenderer Renderer;
     private int frame = 0;
     private float deltaTime = 0;
+    private Sprite[] sprites;
+
     public bool loop;
     public float frameSeconds = 0.2f;
-    bool init = false;
+    public string anim_name = "";
 
-    public void Init(SpriteRenderer Sr, string anim_name)
+    public void Awake()
     {
-        Renderer = Sr;
-        sprites = Resources.LoadAll<Sprite>(anim_name);
-        init = true;
     }
     
     void Start()
     {
-        
+        Renderer = gameObject.GetComponent<SpriteRenderer>();
+        sprites = Resources.LoadAll<Sprite>(anim_name);
+        Renderer.sprite = sprites[0];
     }
     
    public void Update()
     {
-        if (init == true)
-            Animate();
+        Animate();
     }
 
     public void Animate()
