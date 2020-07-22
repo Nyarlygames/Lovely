@@ -7,11 +7,12 @@ public class EnemyController : MonoBehaviour
     public Enemy EnemyType;
     public WeaponController Weapon;
     public AnimationController Anim;
-    public GameObject Player;
+    public PlayerController Player;
+    public Enemy_Behaviour AI;
 
     void Awake()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     void Start()
@@ -20,10 +21,21 @@ public class EnemyController : MonoBehaviour
         Weapon.weap = EnemyType.weapon;
         Anim = gameObject.AddComponent<AnimationController>();
         Anim.anim_name = EnemyType.sprite;
+        AI = EnemyType.behaviour;
     }
     
     void Update()
     {
-      //  Weapon.FireWeapon(1, Player.transform.position);
+        AI.Update(Player, this);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("collided");
+        Debug.Log(col.collider.tag);
+        if (col.collider.tag == "Player")
+        {
+            AI.OnCollisionEnterPlayer(Player, this);
+        }
     }
 }

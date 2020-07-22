@@ -8,6 +8,9 @@ public class Enemy_Bomber : Enemy
     {
         sprite = "gfx/Bomber";
         health = 10;
+        speed = 1f;
+        destroy_damage = 5;
         weapon = new Weapon_Bomber();
+        behaviour = new Behaviour_Bomber();
     }
 }

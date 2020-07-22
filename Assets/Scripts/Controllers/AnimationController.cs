@@ -22,9 +22,10 @@ public class AnimationController : MonoBehaviour
         Renderer = gameObject.GetComponent<SpriteRenderer>();
         sprites = Resources.LoadAll<Sprite>(anim_name);
         Renderer.sprite = sprites[0];
+        gameObject.GetComponent<BoxCollider2D>().size = Renderer.sprite.bounds.size;
     }
-    
-   public void Update()
+
+    public void Update()
     {
         Animate();
     }
