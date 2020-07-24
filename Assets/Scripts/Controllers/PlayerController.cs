@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,26 +9,25 @@ public class PlayerController : MonoBehaviour
     private InputController InputController;
     private WeaponController WeapController;
     public int health = 100;
-    
+    private HealthbarController HealthController;
+
     void Awake()
     {
+        HealthController = gameObject.AddComponent<HealthbarController>();
+        HealthController.AttachedObject = gameObject;
     }
 
     void Start()
     {
-        gameObject.AddComponent<BoxCollider2D>();
     }
 
 
     void Update()
     {
-        
     }
+    
 
-
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("collided");
-        Debug.Log(col.collider.tag);
     }
 }

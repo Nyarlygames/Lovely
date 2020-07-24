@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class EnemyController : MonoBehaviour
     public AnimationController Anim;
     public PlayerController Player;
     public Enemy_Behaviour AI;
+    private HealthbarController HealthController;
 
     void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        HealthController = gameObject.AddComponent<HealthbarController>();
+        HealthController.AttachedObject = gameObject;
     }
 
     void Start()
@@ -29,11 +33,9 @@ public class EnemyController : MonoBehaviour
         AI.Update(Player, this);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("collided");
-        Debug.Log(col.collider.tag);
-        if (col.collider.tag == "Player")
+        if (col.tag == "Player")
         {
             AI.OnCollisionEnterPlayer(Player, this);
         }
