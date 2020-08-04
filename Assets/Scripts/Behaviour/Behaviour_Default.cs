@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class Behaviour_Default : Enemy_Behaviour
 {
-    public Behaviour_Default()
-    {
-
-    }
 }

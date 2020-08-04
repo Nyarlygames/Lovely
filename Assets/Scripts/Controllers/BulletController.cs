@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    public GameObject Initiator;
+    public Weapon weapon;
+
     void Start()
     {
         

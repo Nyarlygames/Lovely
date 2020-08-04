@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefaultBullet : Bullet
+public class BomberAlternateBullet : Bullet
 {
-    public DefaultBullet()
+    public BomberAlternateBullet()
     {
-        BulletSpeed = 5.0f;
+        BulletSpeed = 2.0f;
         damage = 1.0f;
         sprite = Resources.Load<Sprite>("gfx/tir");
     }

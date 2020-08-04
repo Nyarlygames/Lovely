@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy
 {
+    public int max_health;
     public int health;
     public string sprite;
     public float speed = 1.0f;

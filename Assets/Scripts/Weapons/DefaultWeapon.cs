@@ -8,5 +8,8 @@ public class DefaultWeapon : Weapon
     {
         MainBullet = new DefaultBullet();
         AlternateBullet = new AnotherBullet();
+        Fire_Rate = 0.1f;
+        Alternate_Fire_Rate = 2.0f;
+        damage = 5;
     }
 }

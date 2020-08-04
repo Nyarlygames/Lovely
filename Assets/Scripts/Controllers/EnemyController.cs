@@ -27,10 +27,18 @@ public class EnemyController : MonoBehaviour
         Anim.anim_name = EnemyType.sprite;
         AI = EnemyType.behaviour;
     }
+
+    public void Fire(Vector3 position, int mode)
+    {
+        if (position == Vector3.zero)
+            position = Player.transform.position;
+        Weapon.FireWeapon(mode, position, "Enemy_Bullet", this.gameObject);
+    }
     
     void Update()
     {
         AI.Update(Player, this);
+        HealthController.SliderComponent.value = EnemyType.health;
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -38,6 +46,12 @@ public class EnemyController : MonoBehaviour
         if (col.tag == "Player")
         {
             AI.OnCollisionEnterPlayer(Player, this);
+        }
+
+        if (col.tag == "Player_Bullet")
+        {
+            EnemyType.health -= col.gameObject.GetComponent<BulletController>().weapon.damage;
+            Destroy(col.gameObject);
         }
     }
 }

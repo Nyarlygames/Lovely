@@ -70,10 +70,7 @@ MonoBehaviour:
   Weapon: {fileID: 0}
   Anim: {fileID: 0}
   Player: {fileID: 0}
-  MaxHealth: 500
-  Fill: {fileID: 0}
-  MaxHealthColor: {r: 0, g: 1, b: 0, a: 1}
-  MinHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  AIController: {fileID: 0}
 --- !u!212 &3092634239726757272
 SpriteRenderer:
   m_ObjectHideFlags: 0

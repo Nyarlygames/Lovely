@@ -6,7 +6,8 @@ public class Weapon_Bomber : Weapon
 {
     public Weapon_Bomber()
     {
-        MainBullet = new AnotherBullet();
-        AlternateBullet = new DefaultBullet();
+        MainBullet = new BomberBullet();
+        AlternateBullet = new BomberAlternateBullet();
+        damage = 10;
     }
 }

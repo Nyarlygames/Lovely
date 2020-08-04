@@ -26,9 +26,12 @@ public class GameController : MonoBehaviour
     {
         Enemy = Instantiate(EnemyPrefab, PlayerPrefab.transform.position + new Vector3(0.0f, 2.0f, 0.0f), Quaternion.identity) as GameObject;
         Enemy.GetComponent<EnemyController>().EnemyType = new Enemy_Bomber();
+
         Enemy = Instantiate(EnemyPrefab, PlayerPrefab.transform.position + new Vector3(2.0f, 2.0f, 0.0f), Quaternion.identity) as GameObject;
         Enemy.GetComponent<EnemyController>().EnemyType = new Enemy_Herpes();
-        //Enemy.GetComponent<EnemyController>().Fire();
+
+        Enemy = Instantiate(EnemyPrefab, PlayerPrefab.transform.position + new Vector3(-2.0f, 2.0f, 0.0f), Quaternion.identity) as GameObject;
+        Enemy.GetComponent<EnemyController>().EnemyType = new Enemy_Macrophage(Enemy.transform.position);
 
     }
     void Start()

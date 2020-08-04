@@ -7,7 +7,8 @@ public class Enemy_Bomber : Enemy
     public Enemy_Bomber()
     {
         sprite = "gfx/Bomber";
-        health = 10;
+        health = 5;
+        max_health = 5;
         speed = 1f;
         destroy_damage = 5;
         weapon = new Weapon_Bomber();
