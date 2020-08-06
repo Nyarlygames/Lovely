@@ -6,22 +6,22 @@ using UnityEngine.UI;
 public class EnemyController : MonoBehaviour
 {
     public Enemy EnemyType;
-    public WeaponController Weapon;
+    public Weapon_Controller Weapon;
     public AnimationController Anim;
-    public PlayerController Player;
+    public Player_Controller Player;
     public Enemy_Behaviour AI;
     private HealthbarController HealthController;
 
     void Awake()
     {
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        Player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Controller>();
         HealthController = gameObject.AddComponent<HealthbarController>();
-        HealthController.AttachedObject = gameObject;
+      //  HealthController.AttachedObject = gameObject;
     }
 
     void Start()
     {
-        Weapon = gameObject.AddComponent<WeaponController>();
+        Weapon = gameObject.AddComponent<Weapon_Controller>();
         Weapon.weap = EnemyType.weapon;
         Anim = gameObject.AddComponent<AnimationController>();
         Anim.anim_name = EnemyType.sprite;

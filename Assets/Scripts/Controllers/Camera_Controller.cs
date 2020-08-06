@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class Camera_Controller : MonoBehaviour
 {
 
-    public GameObject PlayerObject;
+    public Player_Controller PlayerObject;
     public Vector3 Offset;
 
     void Start()
     {
         Offset = new Vector3(0.0f, 0.0f, -10.0f);
+
     }
 
     // Update is called once per frame

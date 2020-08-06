@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class Player_Controller : MonoBehaviour
 {
-    private AnimationController AnimController;
-    private InputController InputController;
-    private WeaponController WeapController;
+    private Input_Controller InputController;
+    public Player_Weapon WeaponController;
     public int max_health = 100;
+    public int start_health = 100;
     public int health;
-    private HealthbarController HealthController;
 
     void Awake()
     {
-        health = max_health;
-        HealthController = gameObject.AddComponent<HealthbarController>();
-        HealthController.AttachedObject = gameObject;
+        health = start_health;
     }
 
     void Start()
@@ -26,7 +23,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HealthController.SliderComponent.value = health;
     }
 
 

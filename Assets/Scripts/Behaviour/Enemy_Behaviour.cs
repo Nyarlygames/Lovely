@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Enemy_Behaviour
 {
-    public virtual void Update(PlayerController player, EnemyController enemy) { }
+    public virtual void Update(Player_Controller player, EnemyController enemy) { }
 
-    public virtual void OnCollisionEnterPlayer(PlayerController player, EnemyController enemy)
+    public virtual void OnCollisionEnterPlayer(Player_Controller player, EnemyController enemy)
     {
-        player.GetComponent<PlayerController>().health -= enemy.EnemyType.destroy_damage;
+        player.GetComponent<Player_Controller>().health -= enemy.EnemyType.destroy_damage;
         Object.Destroy(enemy.gameObject);
     }
 }

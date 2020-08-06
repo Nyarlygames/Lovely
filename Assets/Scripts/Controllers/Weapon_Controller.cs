@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponController : MonoBehaviour
+public class Weapon_Controller : MonoBehaviour
 {
     public Weapon weap;
-    private GameObject BulletPrefab;
-    private GameObject Initiator;
+    public GameObject BulletPrefab;
+    public GameObject Initiator;
 
     private float timerDefault = 0.0f;
     private float timerAlternate = 0.0f;
+
+    public string mode = "default";
+    public int Damage = 1;
+    public float FireRate = 1.0f;
+    public float BulletSpeed = 1.0f;
 
     void Awake()
     {

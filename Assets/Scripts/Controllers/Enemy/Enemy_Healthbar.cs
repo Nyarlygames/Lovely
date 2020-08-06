@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthbarController : MonoBehaviour
+public class Enemy_Healthbar : MonoBehaviour
 {
     private GameObject Healthbar;
-    private GameObject Healthbar_Prefab;
+    public GameObject Healthbar_Prefab;
     private Vector3 pos;
     private Vector3 offset = new Vector3(0.0f, -50.0f, 0.0f);
     private GameObject Canvas;
     public Enemy_Controller EnemyController;
-    public Slider SliderComponent;
+    private Slider SliderComponent;
 
     void Awake()
     {
-        Healthbar_Prefab = Resources.Load<GameObject>("prefabs/HealthBar");
     }
 
     void Start()
@@ -30,7 +29,7 @@ public class HealthbarController : MonoBehaviour
         SliderComponent.maxValue = EnemyController.max_health;
         SliderComponent.value = EnemyController.health;
     }
-    
+
     void Update()
     {
         pos = Camera.main.WorldToScreenPoint(EnemyController.transform.position);
@@ -39,15 +38,7 @@ public class HealthbarController : MonoBehaviour
 
         if (SliderComponent.value == 0)
         {
-            if (EnemyController.tag == "Player")
-            {
-                // gameover or new life ?
-            }
-            else
-            {
-                Destroy(EnemyController);
-            }
-
+            Destroy(EnemyController);
         }
 
     }

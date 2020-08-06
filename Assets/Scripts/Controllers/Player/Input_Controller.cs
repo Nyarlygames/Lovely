@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputController : MonoBehaviour
+public class Input_Controller : MonoBehaviour
 {
     public float speed = 2.0f;
     private Vector3 target;
     private Vector3 position;
     private Camera cam;
     private float angle = 0;
-    private WeaponController Weapon;
+    public Player_Weapon DefaultWeapon;
+    public Player_Weapon AlternateWeapon;
 
     void Awake()
     {
-        Weapon = gameObject.GetComponent<WeaponController>();
+       // Weapon = gameObject.GetComponent<Player_Weapon>();
         cam = Camera.main;
     }
 
@@ -33,16 +34,20 @@ public class InputController : MonoBehaviour
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-            Weapon.FireWeapon(0, Camera.main.ScreenToWorldPoint(mousePos), "Player_Bullet", this.gameObject);
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-            Weapon.FireWeapon(1, Camera.main.ScreenToWorldPoint(mousePos),"Player_Bullet", this.gameObject);
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            DefaultWeapon.FireWeapon(Camera.main.ScreenToWorldPoint(mousePos));
+        }
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            AlternateWeapon.FireWeapon(Camera.main.ScreenToWorldPoint(mousePos));
+        }
     }
 
     public void Move()
     {
-        float horizontalAxis = Input.GetAxis("Horizontal");
-        float verticalAxis = Input.GetAxis("Vertical");
+        float horizontalAxis = Input.GetAxisRaw("Horizontal");
+        float verticalAxis = Input.GetAxisRaw("Vertical");
 
         target = new Vector3(0.0f + horizontalAxis, 0.0f + verticalAxis);
         //if (Input.GetKey(KeyCode.LeftArrow))

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Behaviour_Herpes : Enemy_Behaviour
 {
-    public override void Update(PlayerController player, EnemyController enemy)
+    public override void Update(Player_Controller player, EnemyController enemy)
     {
         enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, player.transform.position, enemy.EnemyType.speed * Time.deltaTime);
     }

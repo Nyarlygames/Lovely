@@ -7,7 +7,7 @@ public class AnimationController : MonoBehaviour
     private SpriteRenderer Renderer;
     private int frame = 0;
     private float deltaTime = 0;
-    private Sprite[] sprites;
+    public Sprite[] sprites;
 
     public bool loop;
     public float frameSeconds = 0.2f;

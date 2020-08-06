@@ -14,7 +14,7 @@ public class Behaviour_Macrophage : Enemy_Behaviour
         min_x = position + new Vector3(-2.0f, 0.0f, 0.0f);
     }
 
-    public override void Update(PlayerController player, EnemyController enemy)
+    public override void Update(Player_Controller player, EnemyController enemy)
     {
         if ((direction == 1) && (enemy.transform.position.x >= max_x.x))
             direction = 0;
