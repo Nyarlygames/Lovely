@@ -26,8 +26,8 @@ public class Player_Weapon : MonoBehaviour
         {
             timer = 0.0f;
             GameObject projectile = Instantiate(Bullet, transform.position, Quaternion.identity) as GameObject;
-            projectile.tag = tag;
-            projectile.GetComponent<Player_Bullet>().Owner = gameObject;
+            projectile.tag = "Player_Bullet";
+            projectile.GetComponent<Bullet_Controller>().Owner = gameObject;
 
             Vector2 direction = target - transform.position;
             direction.Normalize();

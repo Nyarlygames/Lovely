@@ -22,4 +22,13 @@ public class Enemy_Controller : MonoBehaviour
     {
         
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "Player_Bullet")
+        {
+            health -= col.gameObject.GetComponent<Bullet_Controller>().Damage;
+            Destroy(col.gameObject);
+        }
+    }
 }

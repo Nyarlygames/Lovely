@@ -36,9 +36,10 @@ public class Enemy_Healthbar : MonoBehaviour
         pos = pos - offset;
         Healthbar.transform.position = pos;
 
+        SliderComponent.value = EnemyController.health;
         if (SliderComponent.value == 0)
         {
-            Destroy(EnemyController);
+            Destroy(EnemyController.gameObject);
         }
 
     }

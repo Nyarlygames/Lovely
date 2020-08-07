@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class Bullet_Controller : MonoBehaviour
 {
-    public GameObject Initiator;
-    public Weapon weapon;
+    public int Damage = 1;
+    public GameObject Owner;
 
     void Start()
     {
-        
+
     }
-    
+
     void Update()
     {
-        
+
     }
 
     void OnBecameInvisible()
