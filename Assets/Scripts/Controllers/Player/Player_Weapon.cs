@@ -10,6 +10,7 @@ public class Player_Weapon : MonoBehaviour
     public string mode = "default";
     public float FireRate = 1.0f;
     public float BulletSpeed = 1.0f;
+    public int Damage = 1;
 
     void Awake()
     {
@@ -25,12 +26,15 @@ public class Player_Weapon : MonoBehaviour
         if (timer >= FireRate)
         {
             timer = 0.0f;
-            GameObject projectile = Instantiate(Bullet, transform.position, Quaternion.identity) as GameObject;
-            projectile.tag = "Player_Bullet";
-            projectile.GetComponent<Bullet_Controller>().Owner = gameObject;
-
             Vector2 direction = target - transform.position;
             direction.Normalize();
+            GameObject projectile = Instantiate(Bullet, transform.position, Quaternion.identity) as GameObject;
+            projectile.tag = "Player_Bullet";
+            var bc = projectile.GetComponent<Bullet_Controller>();
+            bc.Owner = gameObject;
+            bc.Damage = Damage;
+            bc.Direction = direction;
+            bc.BulletSpeed = BulletSpeed;
             projectile.GetComponent<Rigidbody2D>().velocity = direction * BulletSpeed;
         }
     }
