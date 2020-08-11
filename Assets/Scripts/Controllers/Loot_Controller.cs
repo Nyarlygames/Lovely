@@ -8,8 +8,9 @@ public class Loot_Controller : MonoBehaviour
     public int Damage = 0;
     public float BulletSpeed = 0.0f;
     public float FireRate = 0.0f;
-    public GameObject Bullet;
+    public Bullet_Controller Bullet;
     public int health = 0;
+    public int weapon_mode = 0;
 
     public void Apply_Loot(Player_Controller pc)
     {

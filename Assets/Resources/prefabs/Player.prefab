@@ -34,7 +34,7 @@ RectTransform:
   m_GameObject: {fileID: 8810803138289501031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -9}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -219,10 +219,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5ec0d8df7fb364d819023386278192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 9124438447946792248, guid: a5dd41fbdd179be4f9a8389123c02c09, type: 3}
+  Bullet: {fileID: 6935252983980169695, guid: a5dd41fbdd179be4f9a8389123c02c09, type: 3}
   mode: default
   FireRate: 0.2
   BulletSpeed: 1
+  Damage: 1
 --- !u!114 &234469377378970562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab5ec0d8df7fb364d819023386278192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 5291490000782472128, guid: 3f463d82b64411e489b0b79d4776ec8b, type: 3}
+  Bullet: {fileID: 983882408858308897, guid: 3f463d82b64411e489b0b79d4776ec8b, type: 3}
   mode: default
   FireRate: 1
   BulletSpeed: 1
+  Damage: 1

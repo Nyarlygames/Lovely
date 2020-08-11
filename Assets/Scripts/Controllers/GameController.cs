@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private GameObject PlayerPrefab;
-    private GameObject EnemyPrefab;
-    GameObject Enemy;
-    GameObject Player;
-    Camera cam;
+    public Player_Controller Player;
+    public Camera_Controller cam;
 
 
     void Awake()
     {
+        Player = Instantiate(AssetManager.Instance.Player);
+        cam = Instantiate(AssetManager.Instance.Camera);
+        cam.Player = Player;
     }
 
     void Start()

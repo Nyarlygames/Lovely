@@ -16,7 +16,7 @@ public class Enemy_Controller : MonoBehaviour
     }
     void Start()
     {
-        
+        Player = AssetManager.Instance.Player;
     }
     void Update()
     {

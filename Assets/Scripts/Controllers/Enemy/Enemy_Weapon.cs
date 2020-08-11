@@ -39,6 +39,7 @@ public class Enemy_Weapon : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+       // FireWeapon(gameObject.GetComponent<Enemy_Controller>().Player.transform.position);
     }
     /*  private GameObject BulletPrefab;
       private GameObject Initiator;

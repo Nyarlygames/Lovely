@@ -5,7 +5,7 @@ using UnityEngine;
 public class Camera_Controller : MonoBehaviour
 {
 
-    public Player_Controller PlayerObject;
+    public Player_Controller Player;
     public Vector3 Offset;
 
     void Start()
@@ -17,6 +17,6 @@ public class Camera_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = PlayerObject.transform.position + Offset;
+        transform.position = Player.gameObject.transform.position + Offset;
     }
 }
