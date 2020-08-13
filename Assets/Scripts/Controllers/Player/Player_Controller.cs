@@ -33,5 +33,10 @@ public class Player_Controller : MonoBehaviour
             health -= col.gameObject.GetComponent<Bullet_Controller>().Damage;
             Destroy(col.gameObject);
         }
+        if (col.tag == "Enemy")
+        {
+            health -= col.gameObject.GetComponent<Enemy_Controller>().destroy_damage;
+            Destroy(col.gameObject);
+        }
     }
 }

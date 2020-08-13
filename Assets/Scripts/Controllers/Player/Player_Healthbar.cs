@@ -35,7 +35,7 @@ public class Player_Healthbar : MonoBehaviour
         pos = Camera.main.WorldToScreenPoint(PlayerController.transform.position);
         pos = pos - offset;
         Healthbar.transform.position = pos;
-
+        SliderComponent.value = PlayerController.health;
         if (SliderComponent.value == 0)
         {
             // gameover or new life ?

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy_Weapon : MonoBehaviour
 {
-    public GameObject Bullet;
+    public Bullet_Controller Bullet;
 
     private float timer = 0.0f;
     public string mode = "default";
@@ -25,7 +25,7 @@ public class Enemy_Weapon : MonoBehaviour
         if (timer >= FireRate)
         {
             timer = 0.0f;
-            GameObject projectile = Instantiate(Bullet, transform.position, Quaternion.identity) as GameObject;
+            Bullet_Controller projectile = Instantiate(Bullet, transform.position, Quaternion.identity);
             projectile.tag = tag;
             projectile.GetComponent<Bullet_Controller>().Owner = gameObject;
 

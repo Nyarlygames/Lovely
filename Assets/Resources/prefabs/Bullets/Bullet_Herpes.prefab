@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8507350756822799659}
   - component: {fileID: 1598454235690185311}
   m_Layer: 0
-  m_Name: Bullet 1
+  m_Name: Bullet_Herpes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626187387409258168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.12, y: 3.77, z: -1}
+  m_LocalPosition: {x: 10.12, y: 3.77, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

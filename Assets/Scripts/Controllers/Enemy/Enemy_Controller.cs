@@ -7,6 +7,7 @@ public class Enemy_Controller : MonoBehaviour
     public Player_Controller Player;
 
     public int max_health = 20;
+    public int destroy_damage = 0;
     public int start_health = 15;
     public int health;
 

@@ -11,6 +11,8 @@ public class Loot_Controller : MonoBehaviour
     public Bullet_Controller Bullet;
     public int health = 0;
     public int weapon_mode = 0;
+    public string Modifier = "";
+    public string AltModifier = "";
 
     public void Apply_Loot(Player_Controller pc)
     {
