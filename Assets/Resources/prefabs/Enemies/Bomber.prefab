@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be368b8deb69cb649943058a65ce83ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Enemy: {fileID: 7956794839871850307}
 --- !u!1001 &7956794839024904661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39,6 +40,10 @@ PrefabInstance:
     - target: {fileID: 931442326, guid: 51c830faa159a4c42a89720c5d78cc44, type: 3}
       propertyPath: start_health
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 931442326, guid: 51c830faa159a4c42a89720c5d78cc44, type: 3}
+      propertyPath: speed
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3092634239726757272, guid: 51c830faa159a4c42a89720c5d78cc44,
         type: 3}
@@ -135,3 +140,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7956794839024904661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7956794839871850307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 931442326, guid: 51c830faa159a4c42a89720c5d78cc44,
+    type: 3}
+  m_PrefabInstance: {fileID: 7956794839024904661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154834522180912063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 316558e6f2b123642820875436751bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

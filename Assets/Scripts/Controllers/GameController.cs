@@ -10,7 +10,8 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
-        Player = Instantiate(AssetManager.Instance.Player);
+        Player = Instantiate(AssetManager.Instance.Player_Prefab);
+        AssetManager.Instance.Player = Player;
         cam = Instantiate(AssetManager.Instance.Camera);
         cam.Player = Player;
     }

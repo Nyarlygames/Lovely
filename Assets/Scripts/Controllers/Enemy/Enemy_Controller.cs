@@ -10,6 +10,8 @@ public class Enemy_Controller : MonoBehaviour
     public int destroy_damage = 0;
     public int start_health = 15;
     public int health;
+    public int speed=2;
+    public Spawner_Controller Spawner;
 
     private void Awake()
     {

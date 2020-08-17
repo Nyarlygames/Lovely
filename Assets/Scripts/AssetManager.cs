@@ -8,6 +8,7 @@ public class AssetManager : MonoBehaviour
 
     public static AssetManager Instance { get { return _instance; } }
     public Player_Controller Player;
+    public Player_Controller Player_Prefab;
     public Camera_Controller Camera;
     public Enemy_Controller Bomber;
     public Enemy_Controller Aids;

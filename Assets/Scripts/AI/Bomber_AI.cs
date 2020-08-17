@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Bomber_AI : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Enemy_Controller Enemy;
+
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        transform.position = Vector3.MoveTowards(transform.position, Enemy.Player.transform.position, Enemy.speed * Time.deltaTime);
     }
 }

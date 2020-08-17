@@ -21,7 +21,9 @@ public class Spawner_Controller : MonoBehaviour
         if ((timer > spawnRate) && (spawns.Count < spawnLimit))
         {
             timer = 0.0f;
-            spawns.Add(Instantiate(spawnType, transform.position, Quaternion.identity));
+            Enemy_Controller spawn = Instantiate(spawnType, transform.position, Quaternion.identity);
+            spawn.Spawner = this;
+            spawns.Add(spawn);
         }
     }
 }
